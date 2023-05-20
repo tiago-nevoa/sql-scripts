@@ -33,6 +33,8 @@ CREATE TABLE TRABALHO (
     inspetor varchar(60),
     gestor varchar(60),
     atrdisc char(2),
+    CONSTRAINT atrdisc CHECK (tipo IN ('planeado', 'executado', 'validado')),
+    CONSTRAINT atrdisc CHECK (tipo IN ('IP', 'IR', 'CM')),
     FOREIGN KEY (id_obra) REFERENCES OBRA_CONTENCAO (id),
     FOREIGN KEY (inspetor) REFERENCES UTILIZADOR (email),
     FOREIGN KEY (gestor) REFERENCES UTILIZADOR (email)
@@ -55,7 +57,7 @@ CREATE TABLE DOCUMENTO (
 );
 
 CREATE TABLE EQUIPAMENTO (
-    id serial PRIMARY KEY,
+    id SERIAL UNIQUE,
     tipo integer,
     id_obra integer,
     FOREIGN KEY (id_obra) REFERENCES OBRA_CONTENCAO (id),
