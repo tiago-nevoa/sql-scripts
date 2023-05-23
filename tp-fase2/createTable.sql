@@ -3,7 +3,7 @@ CREATE TABLE UTILIZADOR (
     nome varchar(60),
     tipo varchar(20),
     perfil varchar(20),
-    CONSTRAINT u_email CHECK (email ~* '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$'), /*check if the constraint is correct*/
+    CONSTRAINT u_email CHECK (email ~* '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$'),
     CONSTRAINT u_tipo CHECK (tipo IN ('externo', 'interno'))
 );
 
@@ -11,13 +11,13 @@ CREATE TABLE TIPO_ESTRUTURA (
     id serial PRIMARY KEY, /*check valor sequencial*/
     tipo varchar(15),
     CONSTRAINT te_tipo CHECK (tipo IN ('muro', 'parede', 'aterro', 'talude', 'barreira', 'solução mista')),
-    CONSTRAINT te_id UNIQUE (id) /*confirm this constraint*/
+    CONSTRAINT te_id UNIQUE (id)
 );
 
 CREATE TABLE OBRA_CONTENCAO (
     id serial PRIMARY KEY,
     matricula varchar(20) UNIQUE,
-    custo real,/*restição em falta*/
+    custo real,
     latitude real,
     longitude real,
     tipo_estrutura integer,
@@ -26,8 +26,8 @@ CREATE TABLE OBRA_CONTENCAO (
 
 CREATE TABLE TRABALHO (
     id serial PRIMARY KEY,
-    data_planeada date, /*restrição em falta*/
-    data_execucao date, /*restrição em falta*/
+    data_planeada date,
+    data_execucao date,
     estado varchar(20),
     id_obra integer,
     inspetor varchar(60),
@@ -73,7 +73,7 @@ CREATE TABLE EQ_CMONITORIZACAO (
 
 CREATE TABLE INSPECAO_EXPEDITA (
     id_obra integer PRIMARY KEY,
-    data date, /*restrinção em falta*/
+    data date,
     classificacao integer,
     FOREIGN KEY (id_obra) REFERENCES OBRA_CONTENCAO (id)
 );

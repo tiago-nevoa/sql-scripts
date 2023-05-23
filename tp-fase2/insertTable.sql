@@ -1,32 +1,88 @@
-insert into utilizador values ('teste@gmail.com' ,'Teste Um', 'interno' ,'inspect');
+-- Inserindo dados na tabela UTILIZADOR
+INSERT INTO UTILIZADOR (email, nome, tipo, perfil) VALUES
+    ('usuario1@example.com', 'Usuário 1', 'externo', 'perfil1'),
+    ('usuario2@example.com', 'Usuário 2', 'interno', 'perfil2'),
+    ('usuario3@example.com', 'Usuário 3', 'interno', 'perfil3'),
+    ('usuario4@example.com', 'Usuário 4', 'externo', 'perfil4');
+   
 
-insert into utilizador values ('teste2@gmail.com' ,'Teste DOis', 'interno' ,'gestor');
+-- Inserindo dados na tabela TIPO_ESTRUTURA
+INSERT INTO TIPO_ESTRUTURA (tipo) VALUES
+    ('muro'),
+    ('parede'),
+    ('aterro'),
+    ('talude'),
+    ('barreira'),
+    ('solução mista'),
+    ('aterro'),
+    ('talude');
 
-insert into tipo_estrutura(tipo) values ('barreira');
-
-insert into obra_contencao (matricula, custo, latitude, longitude, tipo_estrutura ) values ('XXXXX', 100, 88, 88, 3);
-
-insert into trabalho (data_planeada, data_execucao, estado, id_obra, inspetor, gestor, atrdisc )
-	values ('2023-05-21', '2023-05-21', 'planeado',5, 'teste@gmail.com', 'teste2@gmail.com', 'IR');
-
-insert into campanha_monitorizacao  values (5 ,1);
-
-insert into documento  values (5 ,1, 'DOC1', 'FFFF');
-
-insert into equipamento(tipo, id_obra) values ('extens�metro', 5);
-
-insert into eq_cmonitorizacao  values (2 ,5, 20);
-
-insert into inspecao_expedita  values (5 ,'2023-05-21', 10);
-
-insert into inspecao_principal values (5,10, 10);
-
-insert into solucao_estrutural  values (5 , 'solucao abc');
+-- Inserindo dados na tabela OBRA_CONTENCAO
+INSERT INTO OBRA_CONTENCAO (matricula, custo, latitude, longitude, tipo_estrutura) VALUES
+    ('ABC123', 10000.50, 40.7128, -74.0060, 1),
+    ('DEF456', 15000.75, 51.5074, -0.1278, 2),
+    ('GHI789', 20000.25, 37.7749, -122.4194, 3),
+    ('JKL012', 18000.50, 48.8566, 2.3522, 4);
 
 
+-- Inserindo dados na tabela TRABALHO
+INSERT INTO TRABALHO (data_planeada, data_execucao, estado, id_obra, inspetor, gestor, atrdisc) VALUES
+    ('2023-05-01', '2023-05-05', 'executado', 1, 'usuario1@example.com', 'usuario2@example.com', 'IP'),
+    ('2023-06-01', '2023-06-05', 'planeado', 2, 'usuario2@example.com', 'usuario1@example.com', 'IR'),
+    ('2023-07-01', '2023-07-05', 'executado', 3, 'usuario1@example.com', 'usuario3@example.com', 'CM'),
+    ('2023-08-01', '2023-08-05', 'validado', 4, 'usuario2@example.com', 'usuario4@example.com', 'IP');
 
-	
-	
+-- Inserindo dados na tabela CAMPANHA_MONITORIZACAO
+INSERT INTO CAMPANHA_MONITORIZACAO (id_trabalho, indice_monitorizacao) VALUES
+    (1, 1),
+    (2, 2),
+    (3, 3),
+    (4, 4);
 
-delete from utilizador  where email  = 'teste@gmail.com';
 
+-- Inserindo dados na tabela DOCUMENTO
+INSERT INTO DOCUMENTO (id_obra, numero, titulo, bytes) VALUES
+    (1, 1, 'Documento 1', 'bytes_do_documento_1'),
+    (1, 2, 'Documento 2', 'bytes_do_documento_2'),
+    (2, 1, 'Documento 3', 'bytes_do_documento_3'),
+    (3, 2, 'Documento 4', 'bytes_do_documento_4'),
+    (4, 1, 'Documento 5', 'bytes_do_documento_5');
+
+-- Inserindo dados na tabela EQUIPAMENTO
+INSERT INTO EQUIPAMENTO (tipo, id_obra) VALUES
+    ('fissusómetro', 1),
+    ('inclinómetro', 1),
+    ('extensómetro', 2),
+    ('fissusómetro', 3),
+    ('inclinómetro', 3),
+    ('extensómetro', 4);
+
+-- Inserindo dados na tabela EQ_CMONITORIZACAO
+INSERT INTO EQ_CMONITORIZACAO (id_equipamento, id_campanha, valor) VALUES
+    (1, 1, 10.5),
+    (2, 1, 20.75),
+    (3, 2, 15.25),
+    (1, 3, 8.75),
+    (2, 3, 12.5),
+    (3, 4, 18.0);
+
+-- Inserindo dados na tabela INSPECAO_EXPEDITA
+INSERT INTO INSPECAO_EXPEDITA (id_obra, data, classificacao) VALUES
+    (1, '2023-05-10', 3),
+    (2, '2023-06-10', 4),
+    (3, '2023-07-10', 2),
+    (4, '2023-08-10', 3);
+
+-- Inserindo dados na tabela INSPECAO_PRINCIPAL
+INSERT INTO INSPECAO_PRINCIPAL (id_trabalho, indice_condicao, estado_conservacao) VALUES
+    (1, 1, 2),
+    (2, 2, 3),
+    (3, 3, 4),
+    (4, 4, 5);
+
+-- Inserindo dados na tabela SOLUCAO_ESTRUTURAL
+INSERT INTO SOLUCAO_ESTRUTURAL (id_obra, sol_estrutural) VALUES
+    (1, 'solução1'),
+    (2, 'solução2'),
+    (3, 'solução3'),
+    (4, 'solução4');
