@@ -91,3 +91,4 @@ CREATE TABLE SOLUCAO_ESTRUTURAL (
     FOREIGN KEY (id_obra) REFERENCES OBRA_CONTENCAO (id),
     PRIMARY KEY (id_obra,sol_estrutural)
 );
+
