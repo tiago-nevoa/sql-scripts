@@ -3,8 +3,12 @@ INSERT INTO UTILIZADOR (email, nome, tipo, perfil) VALUES
     ('usuario1@example.com', 'Usuário 1', 'externo', 'perfil1'),
     ('usuario2@example.com', 'Usuário 2', 'interno', 'perfil2'),
     ('usuario3@example.com', 'Usuário 3', 'interno', 'perfil3'),
-    ('usuario4@example.com', 'Usuário 4', 'externo', 'perfil4');
-   
+    ('usuario4@example.com', 'Usuário 4', 'externo', 'perfil4'),
+   	('inspetor1@example.com', 'Inspetor 1', 'interno', 'inspetor'),
+   	('inspetor2@example.com', 'Manuel Faria', 'interno', 'inspetor'),
+   	('gestor1@example.com', 'António Faria', 'interno', 'gestor'),
+   	('gestor2@example.com', 'João Silva', 'interno', 'gestor');
+   	
 
 -- Inserindo dados na tabela TIPO_ESTRUTURA
 INSERT INTO TIPO_ESTRUTURA (tipo) VALUES
@@ -22,7 +26,10 @@ INSERT INTO OBRA_CONTENCAO (matricula, custo, latitude, longitude, tipo_estrutur
     ('ABC123', 10000.50, 40.7128, -74.0060, 1),
     ('DEF456', 15000.75, 51.5074, -0.1278, 2),
     ('GHI789', 20000.25, 37.7749, -122.4194, 3),
-    ('JKL012', 18000.50, 48.8566, 2.3522, 4);
+    ('JKL012', 18000.50, 48.8566, 2.3522, 4),
+   	('ABC123', 10000.00, 40.1234, -8.5678, 5),
+   	('XYZ789', 15000.00, 41.5678, -9.1234, 6);
+   
 
 
 -- Inserindo dados na tabela TRABALHO
@@ -30,7 +37,10 @@ INSERT INTO TRABALHO (data_planeada, data_execucao, estado, id_obra, inspetor, g
     ('2023-05-01', '2023-05-05', 'executado', 1, 'usuario1@example.com', 'usuario2@example.com', 'IP'),
     ('2023-06-01', '2023-06-05', 'planeado', 2, 'usuario2@example.com', 'usuario1@example.com', 'IR'),
     ('2023-07-01', '2023-07-05', 'executado', 3, 'usuario1@example.com', 'usuario3@example.com', 'CM'),
-    ('2023-08-01', '2023-08-05', 'validado', 4, 'usuario2@example.com', 'usuario4@example.com', 'IP');
+    ('2023-08-01', '2023-08-05', 'validado', 4, 'usuario2@example.com', 'usuario4@example.com', 'IP'),
+   	('2023-05-01', '2023-05-10', 'executado', 5, 'inspetor1@example.com', 'gestor1@example.com', 'IP'),
+   	('2023-06-01', '2023-06-10', 'planeado', 6, 'inspetor2@example.com', 'gestor1@example.com', 'IR'),
+   	('2023-07-01', '2023-07-10', 'validado', 7, 'inspetor2@example.com', 'gestor1@example.com', 'CM');
 
 -- Inserindo dados na tabela CAMPANHA_MONITORIZACAO
 INSERT INTO CAMPANHA_MONITORIZACAO (id_trabalho, indice_monitorizacao) VALUES
