@@ -69,7 +69,7 @@ INNER JOIN OBRA_CONTENCAO ON TRABALHO.id_obra = OBRA_CONTENCAO.id
 WHERE gestor  IN (
     SELECT email
     FROM utilizador
-    WHERE NOME = 'Jo„o Silva'
+    WHERE NOME = 'Jo√£o Silva'
 )
 AND NOT EXISTS (
     select *
