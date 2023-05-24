@@ -32,9 +32,9 @@ INSERT INTO OBRA_CONTENCAO (matricula, custo, latitude, longitude, tipo_estrutur
    
 -- Inserindo dados na tabela TRABALHO
 INSERT INTO TRABALHO (data_planeada, data_execucao, estado, id_obra, inspetor, gestor, atrdisc) VALUES
-    ('2023-05-01', '2023-05-05', 'executado', 1, 'usuario1@example.com', 'usuario2@example.com', 'IP'),
-    ('2023-06-01', '2023-06-05', 'planeado', 2, 'usuario2@example.com', 'usuario1@example.com', 'IR'),
-    ('2023-07-01', '2023-07-05', 'executado', 3, 'usuario1@example.com', 'usuario3@example.com', 'CM'),
+    ('2022-05-01', '2022-05-05', 'executado', 1, 'usuario1@example.com', 'usuario2@example.com', 'IP'),
+    ('2022-06-01', '2022-06-05', 'planeado', 2, 'usuario2@example.com', 'usuario1@example.com', 'IR'),
+    ('2022-07-01', '2023-07-05', 'executado', 3, 'usuario1@example.com', 'usuario3@example.com', 'CM'),
     ('2023-08-01', '2023-08-05', 'validado', 4, 'usuario2@example.com', 'usuario4@example.com', 'IP'),
    	('2023-05-01', '2023-05-10', 'executado', 1, 'inspetor1@example.com', 'gestor1@example.com', 'IP'),
    	('2023-06-01', '2023-06-10', 'planeado', 2, 'inspetor2@example.com', 'gestor1@example.com', 'IR'),
@@ -94,4 +94,4 @@ INSERT INTO SOLUCAO_ESTRUTURAL (id_obra, sol_estrutural) VALUES
     (2, 'solução2'),
     (3, 'solução3'),
     (4, 'solução4');
- 
+    
