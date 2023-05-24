@@ -38,7 +38,11 @@ INSERT INTO TRABALHO (data_planeada, data_execucao, estado, id_obra, inspetor, g
     ('2023-08-01', '2023-08-05', 'validado', 4, 'usuario2@example.com', 'usuario4@example.com', 'IP'),
    	('2023-05-01', '2023-05-10', 'executado', 1, 'inspetor1@example.com', 'gestor1@example.com', 'IP'),
    	('2023-06-01', '2023-06-10', 'planeado', 2, 'inspetor2@example.com', 'gestor1@example.com', 'IR'),
-   	('2023-07-01', '2023-07-10', 'validado', 1, 'inspetor2@example.com', 'gestor1@example.com', 'CM');
+   	('2023-07-01', '2023-07-10', 'validado', 1, 'inspetor2@example.com', 'gestor1@example.com', 'CM'),
+   	('2023-07-01', '2023-07-10', 'validado', 1, 'inspetor1@example.com', 'gestor1@example.com', 'IR'),
+	('2023-07-01', '2023-07-10', 'validado', 1, 'inspetor2@example.com', 'gestor2@example.com', 'CM'),
+	('2023-07-01', '2023-07-10', 'validado', 1, 'inspetor2@example.com', 'gestor1@example.com', 'IP'),
+	('2023-07-01', '2023-07-10', 'validado', 1, 'inspetor1@example.com', 'gestor2@example.com', 'IR');
    
 -- Inserindo dados na tabela CAMPANHA_MONITORIZACAO
 INSERT INTO CAMPANHA_MONITORIZACAO (id_trabalho, indice_monitorizacao) VALUES
