@@ -62,24 +62,31 @@ order by OBRA_CONTENCAO.id ASC
 /*
  * 		g)
  */
+select id, insp.nome as insp, gest.nome as gest from trabalho t
+join utilizador insp on (t.inspetor = insp.email)
+join utilizador gest on (t.gestor = gest.email);
 
-SELECT TRABALHO.id
+
+ 
+
+SELECT TRABALHO.ID
 FROM TRABALHO
-INNER JOIN OBRA_CONTENCAO ON TRABALHO.id_obra = OBRA_CONTENCAO.id
-WHERE gestor  IN (
-    SELECT email
-    FROM utilizador
-    WHERE NOME = 'João Silva'
-)
-AND NOT EXISTS (
-    select *
-    FROM TRABALHO
-    WHERE inspetor IN (
-        SELECT email
-        FROM utilizador
-        WHERE NOME = 'Manuel Faria'
-    )
-);
+INNER JOIN OBRA_CONTENCAO ON TRABALHO.ID_OBRA = OBRA_CONTENCAO.ID
+WHERE (GESTOR  IN (
+    SELECT EMAIL
+    FROM UTILIZADOR
+    WHERE NOME = 'JOÃO SILVA'
+) OR INSPETOR  IN (
+    SELECT EMAIL
+    FROM UTILIZADOR
+    WHERE NOME = 'JOÃO SILVA'
+))
+AND INSPETOR NOT IN  (
+   
+        SELECT EMAIL
+        FROM UTILIZADOR
+        WHERE NOME = 'MANUEL FARIA'
+    );
 
 
 /*
